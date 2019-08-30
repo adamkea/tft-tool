@@ -1,6 +1,6 @@
 <template>
     <div class="container my-4 mx-auto px-4 md:px-2">
-        <div class="inline-flex pb-2">
+        <div class="inline-flex">
             <!-- Cost Buttons -->
             <button class="bg-green-300 hover:bg-green-400 text-green-800 font-bold py-2 px-4 rounded-l" v-on:click="selectCost(0)">All</button>
             <button class="bg-green-300 hover:bg-green-400 text-green-800 font-bold py-2 px-4" v-on:click="selectCost(1)">1</button>
@@ -26,13 +26,14 @@
                     <svg class="fill-current h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z"/> </svg>
                 </button>
                 <ul class="dropdown-menu absolute hidden text-gray-700 pt-1">
+                    <li class="" v-on:click="selectClass('All Classes')"><a class="bg-gray-200 hover:bg-gray-400 py-2 px-4 block whitespace-no-wrap" href="#">All Classes</a></li>
                     <li class="" v-for="clas in classes" :key="clas" v-on:click="selectClass(clas)"><a class="bg-gray-200 hover:bg-gray-400 py-2 px-4 block whitespace-no-wrap" href="#">{{clas}}</a></li>
                 </ul>
             </div>
         </div>
         <!-- Champion Cards -->
         <div class="flex flex-wrap mb-2">
-            <champion class="w-full md:w-1/2 xl:w-1/5 pt-3 px-3 md:pr-2" v-for="champ in champions" :key="champ.id" :champ="champ"/>
+            <champion class="w-full md:w-1/3 xl:w-1/5 pt-3 px-3" v-for="champ in champions" :key="champ.id" :champ="champ"/>
         </div>
     </div>
 </template>
